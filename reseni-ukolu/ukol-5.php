@@ -1,19 +1,19 @@
 <?php
 
-function minimum($a, $b, $kontrola = false) {
-    if ($kontrola && (!is_numeric($a) || !is_numeric($b))) {
+function minimum($a, $b) {
+    if (!is_numeric($a) || !is_numeric($b)) {
         return false;
     }
 
     if ($a < $b) {
         return $a;
-    } else {
-        return $b;
     }
+
+    return $b;
 }
 
 //$minimum = minimum(56, 12.3);
-$minimum = minimum(56, 'xy', true);
+$minimum = minimum(56, 'xy');
 
 if ($minimum === false) {
     echo 'Chyba';
