@@ -4,11 +4,15 @@ if (!isset($_POST['Jméno'], $_POST['Vzkaz']))
 else {
     $jmeno = $_POST['Jméno'];
     $vzkaz = $_POST['Vzkaz'];
-$info = "<b>$jmeno</b><br>$vzkaz</hr>";
-$otvor = fopen('prispevky.txt', 'a');
-fwrite ($otvor, $info);
-fclose($otvor);
-echo 'Uložené!';
-}
+    $info = "<b>$jmeno</b><br>$vzkaz</hr>";
+    $otvor = fopen('prispevky.txt', 'a');}
+    if ($otvor === false) {
+        echo 'Chyba!';
+    } else {
+        fwrite($otvor, $info);
+        fclose($otvor);
+        echo 'Uložené!';
+    }
+
 ?>
-<a href="navstevni-kniha.php">Vratit sa.</a>
+<a href="navstevni-kniha.php">Vratit sa</a>.
