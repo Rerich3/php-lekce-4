@@ -13,12 +13,15 @@
 <br>
 <div class="container">
     <form method="POST" action="vlozit.php">
-    Jméno:<br>
-    <input type="text"name="Jméno:"><br>
-    Vzkaz:<br>
-        <input type="text"name="Vzkaz:">
-        <br>
-        <button type="submit" class="btn btn-primary">Pridať vzkaz</button></br>
+        <div class="form-group">
+            <label for="loginInput">Jméno:</label>
+            <input type="text" class="form-control" id="loginInput" name="Jméno">
+        </div>
+        <div class="form-group">
+            <label for="textarea">Vzkaz:</label>
+            <textarea class="form-control" id="textarea" name="Vzkaz"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Přidat vzkaz</button>
     </form>
     <br>
     <br>
@@ -30,15 +33,19 @@ if (!file_exists($subor)){
 
 $data = @file_get_contents($subor);
 if (!$data) {
-return false}
-return $data
+return false;}
+return $data;
     }
 
 
+    $prispevky = otvor('prispevky.txt');
+    if ($prispevky === false) {
+    print 'Ziadne prispevky!.';}
+    else {
+        print $prispevky;
+    }
 
-
-
-    ?>
+            ?>
 </div>
 </body>
 </html>

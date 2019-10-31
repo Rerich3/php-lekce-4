@@ -1,17 +1,17 @@
 <?php
 if (!isset($_POST['Jméno'], $_POST['Vzkaz']))
-{echo 'Neplatný prístup!';}
+{print 'Neplatný prístup!';}
 else {
     $jmeno = $_POST['Jméno'];
     $vzkaz = $_POST['Vzkaz'];
     $info = "<b>$jmeno</b><br>$vzkaz</hr>";
     $otvor = fopen('prispevky.txt', 'a');}
     if ($otvor === false) {
-        echo 'Chyba!';
+        print 'Chyba!';
     } else {
         fwrite($otvor, $info);
         fclose($otvor);
-        echo 'Uložené!';
+        print 'Uložené!';
     }
 
 ?>
