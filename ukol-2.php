@@ -28,8 +28,30 @@
             <td>1.1.2000</td>
             <td>0 Kč</td>
         </tr>
+
+
+<?php
+$handle = fopen('objednavky.csv', 'r');
+
+if ($handle) {
+    while (($line = fgets($handle, 4096)) !== false) {
+        $hodnoty = explode(';', $line);
+        echo '<tr><td>';
+        echo($hodnoty[0]);
+        echo '</td><td>';
+        echo($hodnoty[3]);
+        echo '</td>
+
+
+
+
+</tr>';
+    }
+}
+
+    ?>
+
     </table>
 </div>
 </body>
 </html>
-
