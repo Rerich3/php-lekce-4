@@ -17,9 +17,28 @@
     <input type="text"name="Jméno:"><br>
     Vzkaz:<br>
         <input type="text"name="Vzkaz:">
+        <br>
+        <button type="submit" class="btn btn-primary">Pridať vzkaz</button></br>
     </form>
-    ...
+    <br>
+    <br>
+    <?php
+    function otvor($subor) {
+if (!file_exists($subor)){
+    return false;
+    }
 
+$data = @file_get_contents($subor);
+if (!$data) {
+return false}
+return $data
+    }
+
+
+
+
+
+    ?>
 </div>
 </body>
 </html>
